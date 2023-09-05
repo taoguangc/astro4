@@ -2,7 +2,6 @@
 import BaseHead from '../components/BaseHead.astro'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
-import Card from '../components/Card.svelte'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 ---
 
@@ -45,8 +44,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
           >astro-blog-template
         </a> by <a href='https://twitter.com/Charca'>Maxi Ferreira</a>.
       </p>
-      <Card />
     </main>
     <Footer />
+    <script>
+      import { gsap } from 'gsap'
+      import { ScrollTrigger } from 'gsap/ScrollTrigger'
+      gsap.registerPlugin(ScrollTrigger)
+    </script>
   </body>
 </html>
