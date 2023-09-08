@@ -1,33 +1,16 @@
 ---
-import NavItem from './NavItem.astro'
-const items = [
-  {
-    title: 'Top',
-    link: '/'
-  },
-  {
-    title: 'About Us',
-    link: '/about'
-  },
-  {
-    title: 'Works',
-    link: '/works'
-  },
-  {
-    title: 'News',
-    link: '/news'
-  },
-  {
-    title: 'Contact',
-    link: '/contact'
-  }
-]
+import menu from '~/data/menu.json'
+import HeaderLink from './HeaderLink.astro'
 ---
 
-<header class='w-full bg-white'>
-  <nav class='flex items-center justify-between flex-wrap px-16 py-8' x-data='{ isOpen: false }'>
+<header class='w-full bg-white border-b border-black/5'>
+  <nav
+    class='flex items-center justify-between flex-wrap px-16 py-6 font-medium text-xl'
+    x-data='{ isOpen: false }'
+    x-cloak
+  >
     <figure class='flex items-center'>
-      <a href='https://emptyarea.com/' aria-label='emptyarea.com' class='text-indigo-500 font-bold text-lg'>
+      <a href='https://emptyarea.com/' aria-label='emptyarea.com' class='text-indigo-500'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           xmlns:xlink='http://www.w3.org/1999/xlink'
@@ -63,46 +46,20 @@ const items = [
     </figure>
     <div class='hidden md:flex md:items-center md:w-auto text-center'>
       <ul class='flex gap-16'>
-        <li class='relative'>
-          <a class='block group' href='https://emptyarea.com/'>
-            Home
-            <div
-              class='absolute border-b border-black transition-all duration-500 transform group-hover:w-full w-0'
-              aria-hidden='true'
-            >
-            </div>
-          </a>
-        </li>
-        <li class='relative'>
-          <a class='block group' href='https://emptyarea.com/work/'>
-            Work
-            <div
-              class='absolute border-b border-black transition-all duration-500 transform group-hover:w-full w-0'
-              aria-hidden='true'
-            >
-            </div>
-          </a>
-        </li>
-        <li class='relative'>
-          <a class='block group' href='https://emptyarea.com/about/'>
-            About
-            <div
-              class='absolute border-b border-black transition-all duration-500 transform group-hover:w-full w-0'
-              aria-hidden='true'
-            >
-            </div>
-          </a>
-        </li>
-        <li class='relative'>
-          <a class='block group' href='https://emptyarea.com/contact/'>
-            Contact
-            <div
-              class='absolute border-b border-black transition-all duration-500 transform group-hover:w-full w-0'
-              aria-hidden='true'
-            >
-            </div>
-          </a>
-        </li>
+        {menu.map(item => <HeaderLink href={item.link}>{item.title}</HeaderLink>)}
+        <!-- {
+          menu.map(item => (
+            <li class='relative'>
+              <a class='block group' href={item.link}>
+                {item.title}
+                <div
+                  class='absolute border-b-2 border-black transition-all duration-500 transform group-hover:w-full w-0'
+                  aria-hidden='true'
+                />
+              </a>
+            </li>
+          ))
+        } -->
       </ul>
     </div>
 

@@ -12,7 +12,7 @@ const { title = 'Emptyarea', description = 'Design your website' } = Astro.props
 ---
 
 <!doctype html>
-<html lang='en' class='scroll-smooth'>
+<html lang='en'>
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
@@ -22,15 +22,13 @@ const { title = 'Emptyarea', description = 'Design your website' } = Astro.props
     <meta name='description' content='{description}' />
   </head>
   <body
-    class='antialiased text-gray-900 tracking-wide'
+    class='overflow-hidden antialiased min-h-screen tracking-wider'
     x-data='{ toTop: false }'
     @scroll.window='toTop = ( window.pageYOffset > window.innerHeight) ? true : false'
   >
     <div class='flex flex-col min-h-screen overflow-visible'>
       <Header />
-      <main class='mx-auto max-w-7xl p-4'>
-        <slot />
-      </main>
+      <slot />
       <Footer />
     </div>
   </body>
