@@ -19,5 +19,5 @@ gsap.to('h1 > span', {
   stagger: 0.2,
   duration: 0.5,
   ease: 'back.inOut',
-  delay: 0.5
+  delay: 0.2
 })
