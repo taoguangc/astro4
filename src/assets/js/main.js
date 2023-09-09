@@ -1,4 +1,7 @@
 import Lenis from '@studio-freight/lenis'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 
 const lenis = new Lenis({
   duration: 1.2,
@@ -11,16 +14,10 @@ function raf(time) {
 }
 requestAnimationFrame(raf)
 
-import SplitType from 'split-type'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-gsap.registerPlugin(ScrollTrigger)
-
-const title = new SplitType('h1')
-gsap.to('.char', {
+gsap.to('h1 > span', {
   y: 0,
-  stagger: 0.06,
-  dalay: 0.2,
+  stagger: 0.2,
   duration: 0.5,
-  ease: 'back.inOut'
+  ease: 'back.inOut',
+  delay: 0.5
 })
