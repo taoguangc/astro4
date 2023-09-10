@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets'
+import Picture from '~/components/Picture.astro'
 import heroImage from '~/assets/img/14.jpg'
 ---
 
@@ -48,5 +49,5 @@ import heroImage from '~/assets/img/14.jpg'
   </div>
 </section>
 <section class='-mt-56 w-3/5 ml-[40%]'>
-  <Image src={heroImage} alt='商务人士' />
+  <Picture src={heroImage} sizes={[400, 800, 1200]} loading='eager' alt='商务人士' />
 </section>
