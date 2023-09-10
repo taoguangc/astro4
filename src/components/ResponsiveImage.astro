@@ -10,7 +10,7 @@ type Props = {
   loading?: 'lazy' | 'eager'
 }
 
-async function generatePicture({ src, format, sizes = [400, 800, 1200] }: Omit<Props, 'alt'>) {
+async function generateResponsiveImage({ src, sizes = [400, 800, 1200], format }: Omit<Props, 'alt'>) {
   const imgSrcSet = sizes.map(async size => {
     const image = await getImage({ src, width: size, format })
     return `${image.src} ${size}w`
@@ -26,11 +26,11 @@ async function generatePicture({ src, format, sizes = [400, 800, 1200] }: Omit<P
 
 const { src, alt, sizes, format, loading } = Astro.props
 
-const { srcSet, imgSrc } = await generatePicture({
+const { srcSet, imgSrc } = await generateResponsiveImage({
   src,
   sizes,
   format
 })
 ---
 
-<img srcset={srcSet.join(', ')} alt={alt} src={imgSrc} loading={loading} />
+<img srcset={srcSet.join(', ')} alt={alt} src={imgSrc} width={1200} loading={loading} />
