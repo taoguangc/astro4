@@ -16,21 +16,23 @@ async function generateResponsiveImage({ src, sizes = [400, 800, 1200], format }
     return `${image.src} ${size}w`
   })
 
-  const imgSrc = await getImage({ src, width: Math.max(...sizes), format })
+  const imgSrc = await getImage({ src, format })
 
   return {
     srcSet: await Promise.all(imgSrcSet),
-    imgSrc: imgSrc.src
+    imgSrc: imgSrc.src,
+    width: imgSrc.attributes.width,
+    height: imgSrc.attributes.height
   }
 }
 
 const { src, alt, sizes, format, loading } = Astro.props
 
-const { srcSet, imgSrc } = await generateResponsiveImage({
+const { srcSet, imgSrc, width, height } = await generateResponsiveImage({
   src,
   sizes,
   format
 })
 ---
 
-<img srcset={srcSet.join(', ')} alt={alt} src={imgSrc} width={1200} loading={loading} />
+<img srcset={srcSet.join(', ')} alt={alt} src={imgSrc} width={width} height={height} loading={loading} />
