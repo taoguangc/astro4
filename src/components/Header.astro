@@ -5,7 +5,7 @@ import HeaderLink from './HeaderLink.astro'
 
 <header class='w-full bg-white border-b border-black/5 shadow-[0_10px_40px_40px_rgba(0,0,0,0.025)]'>
   <nav
-    class='flex items-center justify-between flex-wrap px-16 py-6 font-medium text-xl'
+    class='flex items-center justify-between flex-wrap px-8 py-2 md:px-16 md:py-6 font-medium text-lg lg:text-xl'
     x-data='{ isOpen: false }'
     x-cloak
   >
@@ -17,7 +17,7 @@ import HeaderLink from './HeaderLink.astro'
           width='288'
           height='42'
           viewBox='0 0 288 42'
-          class='w-60 md:w-48 lg:w-60'
+          class='w-48 lg:w-60'
         >
           <defs>
             <clipPath id='e'>
@@ -45,27 +45,14 @@ import HeaderLink from './HeaderLink.astro'
       <figcaption class='hidden'>emptyarea.com</figcaption>
     </figure>
     <div class='hidden md:flex md:items-center md:w-auto text-center'>
-      <ul class='flex gap-16'>
+      <ul class='flex gap-12 lg:gap-16'>
         {menu.map(item => <HeaderLink href={item.link}>{item.title}</HeaderLink>)}
-        <!-- {
-          menu.map(item => (
-            <li class='relative'>
-              <a class='block group' href={item.link}>
-                {item.title}
-                <div
-                  class='absolute border-b-2 border-black transition-all duration-500 transform group-hover:w-full w-0'
-                  aria-hidden='true'
-                />
-              </a>
-            </li>
-          ))
-        } -->
       </ul>
     </div>
 
     <button
       type='button'
-      class='md:hidden flex justify-center items-center p-4 z-50'
+      class='md:hidden flex justify-center items-center px-0 py-2 md:p-4 z-50'
       @click='isOpen = !isOpen'
       aria-controls='mobile-menu'
       aria-expanded='false'
@@ -99,7 +86,7 @@ import HeaderLink from './HeaderLink.astro'
     </button>
 
     <div
-      class='z-20 absolute inset-0 w-full h-screen bg-black'
+      class='z-20 absolute inset-0 bg-black'
       x-show='isOpen'
       x-transition:enter='transition ease-out duration-500'
       x-transition:enter-start='transform translate-x-full'

@@ -5,29 +5,23 @@ import heroImage from '~/assets/img/14.jpg'
 ---
 
 <section class='bg-repeat' style='background-image: url(/bg-pattern.png);'>
-  <div class='mx-auto container p-8 pt-24 flex'>
-    <div class='w-3/4' id='heading-1'>
-      <h1 class='mb-4 text-8xl tracking-wider leading-snug font-bold'><span>让您的网站</span></h1>
-      <h1 class='mb-20 text-7xl tracking-wider leading-snug font-bold'>
+  <div class='mx-auto container px-4 lg:px-8 pt-24 md:pt-32 flex flex-col lg:flex-row'>
+    <div class='w-full lg:w-3/4'>
+      <h1 class='mb-4 md:mb-8 text-4xl md:text-6xl xl:text-8xl tracking-wider leading-snug font-bold'>
+        <span>让您的网站</span>
+      </h1>
+      <h1 class='mb-8 md:mb-20 text-3xl md:text-5xl xl:text-7xl tracking-wider leading-snug font-bold'>
         <span class='stroke'>动静结合，</span><span>适应最新标准</span>
       </h1>
-      <div class='pl-20 h-48 max-w-md font-light'>
-        <p>
-          我们是数字时代的设计和技术合作伙伴。我们通过开发尖端数字产品执行智能的服务，帮助企业进行创新并保持与客户的高度相关性。我们卓越的数字产品、服务和品牌传播解决方案，从创意到产品，通过时尚的
-          UX/UI 设计前端和后端开发，为创新型初创企业和成熟企业创造成功的数字服务。
-        </p>
-      </div>
     </div>
-    <div class='w-1/4'>
-      <div class='relative text-3xl uppercase w-60 h-60'>
-        <svg class='textcircle animate-[spin_20s_linear_infinite]' viewBox='0 0 500 500'>
+    <div class='hidden lg:block md:w-1/4'>
+      <div class='relative text-3xl uppercase w-48 h-48 overflow-hidden'>
+        <svg viewBox="0 0 200 200" class='animate-[spin_20s_linear_infinite]'>
           <defs>
-            <path id='textcircle' d='M250,400 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z'> </path>
+              <path d="M100,37c34.8,0,63,28.2,63,63s-28.2,63-63,63s-63-28.2-63-63S65.2,37,100,37z" id="textcircle" />
           </defs>
           <text>
-            <textPath xlink:href='#textcircle' textLength='900' fill='#666'
-              >creative design - creative design -
-            </textPath>
+              <textPath xlink:href="#textcircle" fill="#8f8f8f" class="text-xs tracking-[.4em]">creative design - creative design -</textPath>
           </text>
         </svg>
         <div class='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
@@ -48,6 +42,22 @@ import heroImage from '~/assets/img/14.jpg'
     </div>
   </div>
 </section>
-<section class='-mt-56 w-3/5 ml-[40%]'>
-  <ResponsiveImage src={heroImage} loading='eager' alt='商务人士' />
+
+<section class='mx-auto container px-4 lg:px-8 md:h-72 xl:h-96 flex flex-col md:flex-row gap-8'>
+  <div class='md:w-1/2 lg:w-2/5'>
+    <p class='pl-0 lg:pl-20 text-neutral-500 leading-relaxed'>
+      我们是数字时代的设计和技术合作伙伴。我们通过开发尖端数字产品执行智能的服务，帮助企业进行创新并保持与客户的高度相关性。我们卓越的数字产品、服务和品牌传播解决方案，从创意到产品，通过时尚的
+      UX/UI 设计前端和后端开发，为创新型初创企业和成熟企业创造成功的数字服务。
+    </p>
+  </div>
+  <div class='md:w-1/2 lg:w-3/5 relative'>
+    <div class='w-full md:h-72 xl:h-96 md:w-[50vw] lg:w-[60vw] md:absolute md:left-0'>
+      <ResponsiveImage
+        src={heroImage}
+        loading='eager'
+        alt='商务人士'
+        class='w-full h-full object-cover object-center'
+      />
+    </div>
+  </div>
 </section>

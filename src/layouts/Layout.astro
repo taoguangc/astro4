@@ -22,7 +22,7 @@ const { title = 'Emptyarea', description = 'Design your website' } = Astro.props
     <meta name='description' content='{description}' />
   </head>
   <body
-    class='antialiased min-h-screen tracking-wider'
+    class='antialiased min-h-screen'
     x-data='{ toTop: false }'
     @scroll.window='toTop = ( window.pageYOffset > window.innerHeight) ? true : false'
   >
