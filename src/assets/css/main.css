@@ -1,5 +1,5 @@
 /* custom fonts */
-/* @font-face {
+@font-face {
   font-family: "Manrope";
   src: url("/fonts/manrope-latin-300-normal.woff2") format("woff2");
   font-weight: 300;
@@ -37,7 +37,7 @@
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-} */
+}
 
 body {
   font-family: "Manrope", sans-serif;
