@@ -1,13 +1,37 @@
 ---
-const today = new Date();
+const today = new Date()
 ---
 
-<footer class="bg-black text-white py-16">
-	<div class="social-links">
-		
-	</div>
-	<div class="mx-auto container px-4 lg:px-8 flex flex-row justify-between">
-		<div>热爱创意设计，永无止境</div>
-		<div>Neuron, {today.getFullYear()}® All rights reserved.</div>
-	</div>
+<footer class='bg-black text-white py-24'>
+  <div class='mx-auto container px-4 lg:px-8 pb-16 flex flex-row justify-between'>
+    <div class='w-1/2 text-4xl font-light leading-normal tracking-wider'>
+      <p>
+        我们致力于突破界限和拥抱创新。我们的团队不断探索新技术、想法和策略，为您提供尖端的解决方案，为您带来竞争优势。
+      </p>
+    </div>
+  </div>
+  <div class='mx-auto container px-4 lg:px-8 flex flex-row justify-between'>
+    <div class='text-neutral-500'>
+      <h6>EmptyArea, {today.getFullYear()}® All rights reserved.</h6>
+    </div>
+    <div>
+      <a href='#header' onclick="lenis.scrollTo('#header')" class='flex flex-row items-center'>
+        返回顶部
+        <svg
+          xmlns='http:
+                              //ww
+w.w3.org/2
+000/svg'
+          fill='none'
+          viewBox='0 0 24 24'
+          stroke-width='1.5'
+          stroke='currentColor'
+          class='w-6 h-6'
+        >
+          <path stroke-linecap='round' stroke-linejoin='round' d='M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75'></path>
+        </svg>
+      </a>
+    </div>
+  </div>
 </footer>
+<script></script>
