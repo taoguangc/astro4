@@ -25,16 +25,16 @@
 
 @font-face {
   font-family: 'Manrope';
-  src: url('/fonts/manrope-latin-600-normal.woff2') format('woff2');
-  font-weight: 600;
-  font-weight: normal;
+  src: url('/fonts/manrope-latin-700-normal.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Manrope';
-  src: url('/fonts/manrope-latin-700-normal.woff2') format('woff2');
-  font-weight: 700;
+  src: url('/fonts/manrope-latin-800-normal.woff2') format('woff2');
+  font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
@@ -70,3 +70,20 @@ h1 span {
 }
 
 /* Animation */
+.slide-down {
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* prose style */
+.prose p {
+  @apply mb-4;
+}

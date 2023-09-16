@@ -12,19 +12,19 @@ const { title = 'Emptyarea', description = 'Design your website' } = Astro.props
 ---
 
 <!doctype html>
-<html lang='en'>
+<html lang="en">
   <head>
-    <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-    <meta name='generator' content={Astro.generator} />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <meta name='description' content='{description}' />
+    <meta name="description" content="{description}" />
   </head>
   <body
-    class='antialiased min-h-screen'
-    x-data='{ toTop: false }'
-    @scroll.window='toTop = ( window.pageYOffset > window.innerHeight) ? true : false'
+    class="min-h-screen antialiased"
+    x-data="{ toTop: false }"
+    @scroll.window="toTop = ( window.pageYOffset > window.innerHeight) ? true : false"
   >
     <Header />
     <slot />
@@ -32,7 +32,6 @@ const { title = 'Emptyarea', description = 'Design your website' } = Astro.props
   </body>
 </html>
 
-<script src='../assets/js/main.js'></script>
-<!-- <script>
+<script>
   import '~/assets/js/main.js'
-</script> -->
+</script>

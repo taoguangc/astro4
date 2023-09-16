@@ -1,29 +1,22 @@
 ---
 import { getCollection } from 'astro:content'
 import Layout from '~/layouts/Layout.astro'
-import FormattedDate from '~/components/FormattedDate.astro'
+import PostCard from '~/components/PostCard.astro'
 
 const posts = (await getCollection('blog')).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
 ---
 
-<Layout title='Emptyarea' description='Design your website'>
-  <main class='mx-auto min-w-7xl'>
-    <section>
-      <ul class='flex gap-4'>
-        {
-          posts.map(post => (
-            <li>
-              <a href={`/blog/${post.slug}/`} class='block'>
-                <img width={720} height={360} src={post.data.heroImage} alt='' class='mb-2 rounded' />
-                <h4 class='title'>{post.data.title}</h4>
-                <p class='date'>
-                  <FormattedDate date={post.data.pubDate} />
-                </p>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </section>
-  </main>
+<Layout title="Emptyarea" description="Design your website">
+  <section>
+    <div class="container mx-auto my-32 flex flex-col gap-2 px-4 tracking-widest lg:px-8">
+      <h6 class="text-base">MY BLOG</h6>
+      <h1 class="text-5xl">最新文章</h1>
+    </div>
+  </section>
+
+  <section>
+    <div class="container mx-auto my-32 grid grid-cols-2 gap-12 px-4 lg:px-8">
+      {posts.map((post) => <PostCard data={post.data} url={post.slug} />)}
+    </div>
+  </section>
 </Layout>

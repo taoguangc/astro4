@@ -1,0 +1,35 @@
+---
+import Layout from '~/layouts/Layout.astro'
+import Image from '~/components/Image.astro'
+import about_1 from '~/assets/img/about-1.jpg'
+import about_2 from '~/assets/img/about-2.jpg'
+import about_3 from '~/assets/img/about-3.jpg'
+---
+
+<Layout>
+  <section>
+    <div class="container mx-auto my-32 flex flex-col gap-16 px-4 tracking-widest lg:flex-row lg:px-8">
+      <div class="lg:w-1/2">
+        <h2 class="mb-2 text-base">CONTACT</h2>
+        <h3 class="text-5xl">联系我们</h3>
+      </div>
+      <div class="mt-4 lg:w-1/2">
+        <h4 class="text-lg">
+          我们通过创建清晰传达、实现营销目标且外观精美的品牌标识、数字体验和印刷材料来帮助客户取得成功。
+        </h4>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container mx-auto my-32 flex flex-col gap-16 px-4 tracking-widest lg:flex-row lg:px-8">
+      <div class="mt-4 lg:w-1/2">
+        <h2 class="mb-4 text-2xl leading-normal">保持联系</h2>
+        <h3 class="mb-4 text-lg leading-tight">如果您想与我们合作或只是想取得联系，我们很乐意听取您的意见！</h3>
+      </div>
+      <div class="lg:w-1/2">
+        <Image src={about_2} alt="About 2" />
+      </div>
+    </div>
+  </section>
+</Layout>
