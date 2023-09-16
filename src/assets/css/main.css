@@ -85,5 +85,5 @@ h1 span {
 
 /* prose style */
 .prose p {
-  @apply mb-4;
+  @apply mb-4 leading-relaxed;
 }
