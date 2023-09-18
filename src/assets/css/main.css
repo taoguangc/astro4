@@ -64,6 +64,15 @@ h1 span {
   transition: transform 0.5s;
 }
 
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  @apply tracking-wider;
+}
+
 .stroke {
   color: transparent;
   -webkit-text-stroke: 1px #1d1d1d;

@@ -4,12 +4,16 @@
     "link": "/"
   },
   {
-    "title": "关于",
-    "link": "/about"
-  },
-  {
     "title": "作品",
     "link": "/works"
+  },
+  {
+    "title": "主题",
+    "link": "/themes"
+  },
+  {
+    "title": "关于",
+    "link": "/about"
   },
   {
     "title": "博客",
