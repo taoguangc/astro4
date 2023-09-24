@@ -21,7 +21,7 @@ const { title = 'Emptyarea', description = 'Design your website' } = Astro.props
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content="{description}" />
-    <ViewTransitions />
+    <ViewTransitions fallback="swap" />
   </head>
   <body
     class="min-h-screen antialiased"

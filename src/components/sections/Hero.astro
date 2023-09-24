@@ -59,13 +59,11 @@ import heroImage from '~/assets/img/14.jpg'
 </section>
 
 <script>
-  document.addEventListener('astro:after-swap', () => {
-    gsap.to('h1 > span', {
-      y: 0,
-      stagger: 0.2,
-      duration: 0.5,
-      ease: 'back.inOut',
-      delay: 0.2,
-    })
+  gsap.to('h1 > span', {
+    y: 0,
+    stagger: 0.2,
+    duration: 0.5,
+    ease: 'back.inOut',
+    delay: 0.2,
   })
 </script>
