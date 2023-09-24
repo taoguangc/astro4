@@ -74,9 +74,9 @@ import work06 from '~/assets/img/work06.jpg'
 </section>
 
 <script>
-  const boxes = document.querySelector('.works')
+  const boxes = document.querySelector('.works') as HTMLDivElement
 
-  function getScrollAmount() {
+  function getScrollAmount(): number {
     let boxesWidth = boxes.scrollWidth
     return -(boxesWidth - window.innerWidth)
   }
@@ -87,13 +87,25 @@ import work06 from '~/assets/img/work06.jpg'
     ease: 'none',
   })
 
-  ScrollTrigger.create({
-    trigger: '.worksWrapper',
-    start: 'top 20%',
-    end: () => `+=${getScrollAmount() * -1}`,
-    pin: true,
-    animation: tween,
-    scrub: 1,
-    invalidateOnRefresh: true,
+  // ScrollTrigger.create({
+  //   trigger: '.worksWrapper',
+  //   start: 'top 20%',
+  //   end: () => `+=${getScrollAmount() * -1}`,
+  //   pin: true,
+  //   animation: tween,
+  //   scrub: 1,
+  //   invalidateOnRefresh: true,
+  // })
+
+  document.addEventListener('astro:after-swap', () => {
+    ScrollTrigger.create({
+      trigger: '.worksWrapper',
+      start: 'top 20%',
+      end: () => `+=${getScrollAmount() * -1}`,
+      pin: true,
+      animation: tween,
+      scrub: 1,
+      invalidateOnRefresh: true,
+    })
   })
 </script>

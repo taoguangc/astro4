@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from 'astro:transitions'
 import '~/assets/css/main.css'
 import Header from '~/components/Header.astro'
 import Footer from '~/components/Footer.astro'
@@ -20,6 +21,7 @@ const { title = 'Emptyarea', description = 'Design your website' } = Astro.props
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content="{description}" />
+    <ViewTransitions />
   </head>
   <body
     class="min-h-screen antialiased"
@@ -29,9 +31,8 @@ const { title = 'Emptyarea', description = 'Design your website' } = Astro.props
     <Header />
     <slot />
     <Footer />
+    <script>
+      import '~/assets/js/main.js'
+    </script>
   </body>
 </html>
-
-<script>
-  import '~/assets/js/main.js'
-</script>

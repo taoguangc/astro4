@@ -14,7 +14,7 @@ import HeaderLink from './HeaderLink.astro'
     :class='{ "fixed top-0 z-50 slide-down": atTop }'
   >
     <figure class="flex items-center">
-      <a href="https://emptyarea.com/" aria-label="emptyarea.com" class="text-indigo-500">
+      <a href={import.meta.env.BASE_URL} aria-label="emptyarea.com" class="text-indigo-500">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
