@@ -26,9 +26,11 @@ const { title = 'Emptyarea', description = 'Design your website' } = Astro.props
     x-data="{ toTop: false }"
     @scroll.window="toTop = ( window.pageYOffset > window.innerHeight) ? true : false"
   >
-    <Header />
-    <slot />
-    <Footer />
+    <main class="transition-fade">
+      <Header />
+      <slot />
+      <Footer />
+    </main>
     <script>
       import '~/assets/js/main.js'
     </script>
