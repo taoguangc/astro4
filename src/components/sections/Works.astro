@@ -10,7 +10,7 @@ import work06 from '~/assets/img/work06.jpg'
 
 <section class="worksWrapper overflow-hidden py-24">
   <div class="works flex w-[300vw] flex-row flex-nowrap justify-start gap-16 px-16 lg:px-24">
-    <div class="lg:w-1/2">
+    <div class="w-1/2">
       <Image src={work01} alt="work01" class="mb-8" />
       <div class="flex flex-row justify-between">
         <div>
@@ -74,26 +74,20 @@ import work06 from '~/assets/img/work06.jpg'
 </section>
 
 <script>
-  const boxes = document.querySelector('.works') as HTMLDivElement
+  document.addEventListener('astro:page-load', () => {
+    let sections = gsap.utils.toArray('.w-1\\/2')
 
-  function getScrollAmount(): number {
-    let boxesWidth = boxes.scrollWidth
-    return -(boxesWidth - window.innerWidth)
-  }
-
-  const tween = gsap.to(boxes, {
-    x: getScrollAmount,
-    duration: 3,
-    ease: 'none',
-  })
-
-  ScrollTrigger.create({
-    trigger: '.worksWrapper',
-    start: 'top 10%',
-    end: () => `+=${getScrollAmount() * -1}`,
-    pin: true,
-    animation: tween,
-    scrub: 1,
-    invalidateOnRefresh: true,
+    gsap.to(sections, {
+      xPercent: -50 * (sections.length - 1),
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.works',
+        pin: true,
+        scrub: 1,
+        // snap: 1 / (sections.length - 1),
+        start: 'top 20%',
+        end: '+=2000',
+      },
+    })
   })
 </script>

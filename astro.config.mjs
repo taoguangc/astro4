@@ -3,7 +3,6 @@ import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
 import alpinejs from '@astrojs/alpinejs'
-import swup from '@swup/astro'
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,8 +12,5 @@ export default defineConfig({
     sitemap(),
     tailwind(),
     alpinejs(),
-    swup({
-      theme: ['slide'],
-    }),
   ],
 })
