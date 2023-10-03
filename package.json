@@ -19,7 +19,8 @@
     "@types/alpinejs": "^3.13.2",
     "alpinejs": "^3.13.1",
     "astro": "^3.2.2",
-    "gsap": "^3.12.2"
+    "gsap": "^3.12.2",
+    "sharp": "^0.32.6"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
