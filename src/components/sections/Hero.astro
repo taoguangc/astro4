@@ -44,17 +44,16 @@ import heroImage from '~/assets/img/14.jpg'
   </div>
 </section>
 
-<section class="container mx-auto flex flex-col gap-8 px-4 md:h-72 md:flex-row lg:px-8 xl:h-96">
-  <div class="md:w-1/2 lg:w-2/5">
-    <p class="pl-0 leading-relaxed text-neutral-500 lg:pl-20">
+<section class="lg: grid gap-8 md:grid-cols-[1fr_4fr_4fr_1fr] lg:grid-cols-[1fr_4fr_6fr_1fr]">
+  <div></div>
+  <div>
+    <p class="mr-8 leading-relaxed text-neutral-500 md:mr-0">
       我们是数字时代的设计和技术合作伙伴。我们通过开发尖端数字产品执行智能的服务，帮助企业进行创新并保持与客户的高度相关性。我们卓越的数字产品、服务和品牌传播解决方案，从创意到产品，通过时尚的
       UX/UI 设计前端和后端开发，为创新型初创企业和成熟企业创造成功的数字服务。
     </p>
   </div>
-  <div class="relative md:w-1/2 lg:w-3/5">
-    <div class="w-full md:absolute md:left-0 md:h-72 md:w-[50vw] lg:w-[60vw] xl:h-96">
-      <Image src={heroImage} loading="eager" alt="商务人士" class="h-full w-full object-cover object-center" />
-    </div>
+  <div class="col-span-2 md:h-72 lg:h-[480px]">
+    <Image src={heroImage} loading="eager" alt="商务人士" class="h-full w-full object-cover object-center" />
   </div>
 </section>
 
