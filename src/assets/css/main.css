@@ -40,7 +40,7 @@
 }
 
 /* lenis */
-html.lenis {
+/* html.lenis {
   height: auto;
 }
 
@@ -58,12 +58,12 @@ html.lenis {
 
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
-}
+} */
 
 /* base */
 body {
   font-family: 'Manrope', sans-serif;
-  @apply overflow-hidden bg-gray-50;
+  @apply bg-gray-50;
 }
 
 [x-cloak] {
