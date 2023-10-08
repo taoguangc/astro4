@@ -76,7 +76,6 @@ import work06 from '~/assets/img/work06.jpg'
 <script>
   document.addEventListener('astro:page-load', () => {
     let sections = gsap.utils.toArray('.w-1\\/2')
-
     gsap.to(sections, {
       xPercent: -50 * (sections.length - 1),
       ease: 'none',
@@ -87,7 +86,10 @@ import work06 from '~/assets/img/work06.jpg'
         // snap: 1 / (sections.length - 1),
         start: 'top 20%',
         end: '+=2000',
-        // markers: true,
+        markers: true,
+      },
+      onComplete: () => {
+        ScrollTrigger.refresh(true)
       },
     })
   })
