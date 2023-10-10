@@ -19,6 +19,7 @@
     "@types/alpinejs": "^3.13.2",
     "alpinejs": "^3.13.1",
     "astro": "^3.2.3",
+    "astro-robots-txt": "^1.0.0",
     "gsap": "^3.12.2",
     "sharp": "^0.32.6"
   },
