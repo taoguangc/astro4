@@ -3,7 +3,7 @@ import Image from '~/components/Image.astro'
 import heroImage from '~/assets/img/14.jpg'
 ---
 
-<section class="bg-repeat" style="background-image: url(/bg-pattern.png);">
+<section class="bg-repeat pt-24" style="background-image: url(/bg-pattern.png);">
   <div class="container mx-auto flex flex-col px-4 pt-24 md:pt-32 lg:flex-row lg:px-8">
     <div class="w-full lg:w-3/4">
       <h1 class="mb-4 text-4xl font-bold leading-snug tracking-wider md:mb-8 md:text-6xl xl:text-8xl">
@@ -58,13 +58,11 @@ import heroImage from '~/assets/img/14.jpg'
 </section>
 
 <script>
-  document.addEventListener('astro:page-load', () => {
-    gsap.to('h1 > span', {
-      y: 0,
-      stagger: 0.2,
-      duration: 0.5,
-      ease: 'back.inOut',
-      delay: 0.2,
-    })
+  gsap.to('h1 > span', {
+    y: 0,
+    stagger: 0.2,
+    duration: 0.5,
+    ease: 'back.inOut',
+    delay: 0.2,
   })
 </script>

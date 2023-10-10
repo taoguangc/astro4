@@ -10,7 +10,7 @@ import work06 from '~/assets/img/work06.jpg'
 
 <section class="worksWrapper overflow-hidden py-24">
   <div class="works flex w-[300vw] flex-row flex-nowrap justify-start gap-16 px-16 lg:px-24">
-    <div class="w-1/2">
+    <div class="workitem w-1/2">
       <Image src={work01} alt="work01" class="mb-8" />
       <div class="flex flex-row justify-between">
         <div>
@@ -20,7 +20,7 @@ import work06 from '~/assets/img/work06.jpg'
         <h6 class="text-xl font-semibold">2023</h6>
       </div>
     </div>
-    <div class="w-1/2">
+    <div class="workitem w-1/2">
       <Image src={work02} alt="work02" class="mb-8" />
       <div class="flex flex-row justify-between">
         <div>
@@ -30,7 +30,7 @@ import work06 from '~/assets/img/work06.jpg'
         <h6 class="text-xl font-semibold">2023</h6>
       </div>
     </div>
-    <div class="w-1/2">
+    <div class="workitem w-1/2">
       <Image src={work03} alt="work03" class="mb-8" />
       <div class="flex flex-row justify-between">
         <div>
@@ -40,7 +40,7 @@ import work06 from '~/assets/img/work06.jpg'
         <h6 class="text-xl font-semibold">2023</h6>
       </div>
     </div>
-    <div class="w-1/2">
+    <div class="workitem w-1/2">
       <Image src={work04} alt="work04" class="mb-8" />
       <div class="flex flex-row justify-between">
         <div>
@@ -50,7 +50,7 @@ import work06 from '~/assets/img/work06.jpg'
         <h6 class="text-xl font-semibold">2023</h6>
       </div>
     </div>
-    <div class="w-1/2">
+    <div class="workitem w-1/2">
       <Image src={work05} alt="work05" class="mb-8" />
       <div class="flex flex-row justify-between">
         <div>
@@ -60,7 +60,7 @@ import work06 from '~/assets/img/work06.jpg'
         <h6 class="text-xl font-semibold">2023</h6>
       </div>
     </div>
-    <div class="w-1/2">
+    <div class="workitem w-1/2">
       <Image src={work06} alt="work06" class="mb-8" />
       <div class="flex flex-row justify-between">
         <div>
@@ -74,23 +74,19 @@ import work06 from '~/assets/img/work06.jpg'
 </section>
 
 <script>
-  document.addEventListener('astro:page-load', () => {
-    let sections = gsap.utils.toArray('.w-1\\/2')
-    gsap.to(sections, {
-      xPercent: -50 * (sections.length - 1),
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.works',
-        pin: true,
-        scrub: 1,
-        // snap: 1 / (sections.length - 1),
-        start: 'top 20%',
-        end: '+=2000',
-        // markers: true,
-      },
-      onComplete: () => {
-        ScrollTrigger.refresh(true)
-      },
-    })
+  let sections = gsap.utils.toArray('.workitem')
+  gsap.to(sections, {
+    xPercent: -50 * (sections.length + 3),
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '.works',
+      pin: true,
+      scrub: 1,
+      // snap: 1 / (sections.length - 1),
+      start: 'top 15%',
+      end: '+=3500',
+      // markers: true,
+    },
   })
+  ScrollTrigger.refresh()
 </script>
