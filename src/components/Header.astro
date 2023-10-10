@@ -81,6 +81,7 @@ import HeaderLink from './HeaderLink.astro'
 <div
   class="fixed inset-0 z-40 bg-black"
   x-show="isOpen"
+  x-cloak
   x-transition:enter="transition ease-out duration-500"
   x-transition:enter-start="transform translate-x-full"
   x-transition:leave="transition ease-in duration-500"
