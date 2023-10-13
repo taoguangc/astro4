@@ -4,16 +4,16 @@ const { pathname } = Astro.url
 const isActive = href === pathname || href === pathname.replace(/\/$/, '')
 ---
 
-<li class='relative'>
-  <a href={href} class='block group'>
+<li class="relative">
+  <a href={href} class="group block">
     <slot />
     {
       isActive ? (
-        <div class='absolute border-b-2 border-black w-full' aria-hidden='true' />
+        <div class="absolute w-full border-b-2 border-black" aria-hidden="true" />
       ) : (
         <div
-          class='absolute border-b-2 border-black transition-all duration-500 transform group-hover:w-full w-0'
-          aria-hidden='true'
+          class="absolute w-0 transform border-b-2 border-black transition-all duration-500 group-hover:w-full"
+          aria-hidden="true"
         />
       )
     }

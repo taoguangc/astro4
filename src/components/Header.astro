@@ -1,6 +1,7 @@
 ---
 import menu from '~/data/menu.json'
-import HeaderLink from './HeaderLink.astro'
+const { pathname } = Astro.url
+const current: string = pathname
 ---
 
 <header>
@@ -41,7 +42,16 @@ import HeaderLink from './HeaderLink.astro'
     </figure>
     <div class="hidden text-center md:flex md:w-auto md:items-center">
       <ul class="flex gap-12 lg:gap-16">
-        {menu.map((item) => <HeaderLink href={item.link}>{item.title}</HeaderLink>)}
+        {
+          menu.map((item) => (
+            <li class="relative">
+              <a href={item.link} class="group block">
+                {item.title}
+                {current === item.link && <div class="absolute w-full border-b-2 border-black" aria-hidden="true" />}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </div>
   </nav>
@@ -88,17 +98,15 @@ import HeaderLink from './HeaderLink.astro'
   x-transition:leave-end="transform -translate-x-full"
 >
   <ul class="mx-auto flex flex-col items-start p-24 text-white">
-    <li class="relative my-8 text-xl">
-      <a class="group block" href="https://emptyarea.com/">Home</a>
-    </li>
-    <li class="relative my-8 text-xl">
-      <a class="group block" href="https://emptyarea.com/work/">Work</a>
-    </li>
-    <li class="relative my-8 text-xl">
-      <a class="group block" href="https://emptyarea.com/about/">About</a>
-    </li>
-    <li class="relative my-8 text-xl">
-      <a class="group block" href="https://emptyarea.com/contact/">Contact</a>
-    </li>
+    {
+      menu.map((item) => (
+        <li class="relative my-8 text-xl">
+          <a class="group block" href={item.link}>
+            {item.title}
+            {current === item.link && <div class="absolute w-full border-b-2 border-white" aria-hidden="true" />}
+          </a>
+        </li>
+      ))
+    }
   </ul>
 </div>
