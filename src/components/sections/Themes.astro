@@ -1,5 +1,5 @@
 ---
-import Image from '~/components/Image.astro'
+import { Image } from 'astro:assets'
 import builder from '~/assets/img/builder-desktop.webp'
 ---
 
@@ -27,6 +27,6 @@ import builder from '~/assets/img/builder-desktop.webp'
     </div>
   </div>
   <div class="container mx-auto flex items-center justify-center p-8 md:p-16 lg:p-32">
-    <Image src={builder} alt="主题生成器" />
+    <Image src={builder} densities={[1.5, 2]} alt="主题生成器" />
   </div>
 </section>
