@@ -1,6 +1,5 @@
-import siteData from "../data/siteData.json"
-import { slugify } from "./utils";
-
+import siteData from '../data/siteData.json'
+import { slugify } from './utils'
 
 export default function jsonLDGenerator({ type, post, url }) {
   if (type === 'post') {
@@ -22,7 +21,7 @@ export default function jsonLDGenerator({ type, post, url }) {
         },
         "datePublished": "${post.date}"
       }
-    </script>`;
+    </script>`
   }
   return `<script type="application/ld+json">
       {
@@ -31,5 +30,5 @@ export default function jsonLDGenerator({ type, post, url }) {
       "name": "${siteData.title}",
       "url": "${import.meta.env.SITE}"
       }
-    </script>`;
+    </script>`
 }
